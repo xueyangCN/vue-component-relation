@@ -6,11 +6,14 @@ export default{
         }
     },
     created(){
-        this.publicEventList = {};//发布的事件
-        this.publicMethodList = {};//发布的方法
-        this.publicDataRelations = {};//发布的属性关联
+        this. __mixInit();
     },
     methods: {
+        __mixInit(){
+            this.publicEventList = {};//发布的事件
+            this.publicMethodList = {};//发布的方法
+            this.publicDataRelations = {};//发布的属性关联
+        },
         __setPublicData(data){
             let {key,value} = data;
             this.publicData[key] = value;
